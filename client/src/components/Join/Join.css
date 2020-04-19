@@ -1,0 +1,131 @@
+html, body {
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.joinOuterContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  text-align: center;
+  height: 95vh;
+  align-items: center;
+  background-color: #1A1A1D;
+}
+
+.joinInnerContainer {
+  width: 22%;
+  height: 450px;
+  background: linear-gradient(313deg, rgba(255,118,198,1) 0%, rgba(109,109,255,1) 100%);
+  padding: 30px;
+  border-radius: 26px 26px 26px 0px;
+}
+
+.djoinInnerContainer {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.joinInput {
+  border-radius: 5px;
+  border: none;
+  padding: 15px 20px;
+  font-family: 'Roboto' sans-serif;
+  font-size: 16px;
+  width: 100%;
+}
+
+.heading {
+  color: white;
+  font-size: 2.5em;
+  padding-bottom: 10px;
+  border-bottom: 2px solid white;
+}
+
+.dheading {
+  color: white;
+  font-size: 3em;
+}
+
+.button {
+    color: #fff !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: rgb(11, 101, 255);
+    padding: 20px;
+    border-radius: 5px;
+    display: inline-block;
+    border: none;
+    width: 100%;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+}
+
+.button:hover{
+  transform: scale(1.05,1.05);
+}
+
+.logo{
+  width: 25%;
+  margin: 0;
+  padding: 0;
+}
+
+.sub-info{
+  color: white;
+  margin-left: 50px;
+}
+
+.logocontainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .joinOuterContainer {
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .logo{
+    width: 60%;
+    margin-bottom: -30px;
+  }
+  .logocontainer{
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: -40px;
+  }
+  .joinInnerContainer {
+    width: 90%;
+  }
+  .djoinInnerContainer{
+    margin-right: 0px;
+  }
+  .sub-info{
+    margin-left: 0px;
+    padding: 0;
+    font-size: 18px;
+  }
+}
+
+button:focus {
+  outline: 0;
+}
