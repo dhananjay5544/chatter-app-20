@@ -1,8 +1,10 @@
 import React from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Badge from "@material-ui/core/Badge";
+import { OverlayTrigger, Tooltip, Popover } from "react-bootstrap";
 
 import "./TextContainer.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Logo from "../../icons/logo1.svg";
 
 const TextContainer = ({ users }) => (
@@ -18,13 +20,30 @@ const TextContainer = ({ users }) => (
 						justifyContent: "space-between",
 					}}
 				>
-					<img
-						src={Logo}
-						className="logo"
-						alt="chatter"
-						style={{ width: "6%" }}
-					/>
-					<Badge badgeContent={users.length} color="secondary"></Badge>
+					<div style={{ display: "flex", alignItems: "center" }}>
+						<img
+							src={Logo}
+							className="logo mr-1"
+							alt="chatter"
+							style={{ width: "15%" }}
+						/>
+						<h5 className="mt-2">Chatter</h5>
+					</div>
+
+					<OverlayTrigger
+						placement="left"
+						overlay={
+							<Tooltip id="tooltip-left" className="mr-2">
+								Total Participants <strong>{users.length}</strong>
+							</Tooltip>
+						}
+					>
+						<Badge
+							badgeContent={users.length}
+							color="secondary"
+							style={{ cursor: "pointer" }}
+						></Badge>
+					</OverlayTrigger>
 				</div>
 				<ul class="list-group list-group-flush">
 					{users.map(({ name }) => (
@@ -32,7 +51,7 @@ const TextContainer = ({ users }) => (
 							class="list-group-item"
 							style={{
 								color: "black",
-								fontSize: "20px",
+								fontSize: "15px",
 								display: "flex",
 								alignItems: "center",
 							}}

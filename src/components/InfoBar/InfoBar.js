@@ -19,19 +19,15 @@ const InfoBar = ({ room, name }) => (
 		<div className="leftInnerContainer">
 			<img className="onlineIcon" src={onlineIcon} alt="online icon" />
 			<div className="group-info">
-				<h4 className="mt-3	">{room}</h4>
-				<p className="mt-n2" style={{ fontSize: "15px" }}>
+				<h4 className="mt-3 room-name">{room}</h4>
+				<p className="mt-n2 room-info">
 					room created at {getRoomTime()} by {name}
 				</p>
 			</div>
 		</div>
 		<div className="rightInnerContainer">
 			<a href="/" className="btn btn-light">
-				<img
-					src={closeIcon}
-					alt="close icon"
-					style={{ width: "20px", marginRight: "5px" }}
-				/>
+				<img src={closeIcon} alt="close icon" className="close-icon" />
 				Leave room
 			</a>
 		</div>

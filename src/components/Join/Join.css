@@ -38,6 +38,11 @@ body {
 	margin-left: 10px;
 	font-weight: 800;
 }
+.app-name1 {
+	font-size: 4em;
+	margin-left: 10px;
+	font-weight: 800;
+}
 
 .button {
 	transition: all 1s ease-in-out;
@@ -69,28 +74,62 @@ body {
 .mt-20 {
 	margin-top: 20px;
 }
+.banner-img {
+	width: 45%;
+	transform: translateX(-100px);
+}
 
 .label {
 	font-weight: 500;
 }
+.loader {
+	min-height: 100vh;
+	width: 100%;
+}
+.loader img {
+	width: 10%;
+}
+.loader-line {
+	width: 30%;
+	margin: auto;
+}
+
+.img-div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	margin-top: 25vh;
+	margin-bottom: 30px;
+}
 
 @media (min-width: 320px) and (max-width: 480px) {
 	.joinOuterContainer {
-		height: 100vh;
+		width: 100%;
 		flex-direction: column;
 		justify-content: center;
+		align-items: center;
+	}
+	.banner-img {
+		width: 90%;
+		transform: translateX(0px);
+		margin-bottom: 20px;
 	}
 	.logo {
-		width: 60%;
-		margin-bottom: -30px;
+		width: 30%;
+	}
+	.app-name {
+		font-size: 2em;
+		margin: 0;
 	}
 	.logocontainer {
 		justify-content: center;
 		flex-direction: column;
-		margin-bottom: -40px;
+		margin-top: 0;
 	}
 	.joinInnerContainer {
 		width: 90%;
+		padding: 22px;
 	}
 	.djoinInnerContainer {
 		margin-right: 0px;
@@ -99,6 +138,17 @@ body {
 		margin-left: 0px;
 		padding: 0;
 		font-size: 18px;
+	}
+	.loader img {
+		width: 35%;
+	}
+	.app-name1 {
+		font-size: 3em;
+		margin-left: 10px;
+		font-weight: 800;
+	}
+	.loader-line {
+		width: 60%;
 	}
 }
 

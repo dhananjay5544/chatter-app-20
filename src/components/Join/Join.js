@@ -1,17 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import "./Join.css";
 import logo from "../../icons/logo1.svg";
-import logo1 from "../../icons/chat.svg";
 import logo2 from "../../icons/banner2.svg";
-import "bootstrap/dist/css/bootstrap.min.css";
+import LinearProgress from "@material-ui/core/LinearProgress";
 
 export default function SignIn() {
 	const [name, setName] = useState("");
 	const [room, setRoom] = useState("");
+	const [pageload, setPageLoad] = useState(true);
 
-	return (
+	useEffect(() => {
+		setTimeout(() => {
+			setPageLoad(false);
+		}, 5000);
+	}, []);
+
+	return pageload ? (
+		<div className="loader">
+			<div className="img-div">
+				<img src={logo} alt="chatter" />
+				<h1 className="app-name1">Chatter</h1>
+			</div>
+			<LinearProgress color="secondary" className="loader-line" />
+		</div>
+	) : (
 		<div>
 			<div className="container-fluid mt-5">
 				<div className="logocontainer">
@@ -23,11 +37,7 @@ export default function SignIn() {
 				</h2>
 			</div>
 			<div className="joinOuterContainer">
-				<img
-					src={logo2}
-					alt="sdsd"
-					style={{ width: "45%", transform: "translateX(-100px)" }}
-				/>
+				<img src={logo2} alt="sdsd" className="banner-img" />
 				<div className="joinInnerContainer">
 					<h1 className="heading">Join</h1>
 					<div>
@@ -60,6 +70,13 @@ export default function SignIn() {
 						</button>
 					</Link>
 				</div>
+			</div>
+			<div
+				className="text-center pt-5"
+				style={{ fontFamily: "'Montserrat', sans-serif" }}
+			>
+				<h4>Fork me on github</h4>
+				<h6>All rights are reserved</h6>
 			</div>
 		</div>
 	);
