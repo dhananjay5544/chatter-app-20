@@ -1,0 +1,94 @@
+.messageBox1 {
+	background: #f3f3f3;
+	border-radius: 0px 10px 10px 10px;
+	color: white;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	display: flex;
+	flex-direction: column;
+	max-width: 80%;
+}
+
+.messageBox2 {
+	background: #f3f3f3;
+	border-radius: 10px 10px 0px 10px;
+	color: white;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	display: flex;
+	flex-direction: column;
+	max-width: 80%;
+}
+
+.messageText {
+	width: 100%;
+	letter-spacing: 0;
+	float: left;
+	font-size: 1.2em;
+	word-wrap: break-word;
+}
+
+.messageText img {
+	vertical-align: middle;
+}
+
+.messageContainer {
+	display: flex;
+	justify-content: flex-end;
+	padding: 0 5%;
+	margin-top: 3px;
+}
+
+.sentText {
+	display: flex;
+	align-items: center;
+	font-family: Helvetica;
+	color: #828282;
+	letter-spacing: 0.3px;
+}
+
+.pl-10 {
+	padding-left: 10px;
+}
+
+.pr-10 {
+	padding-right: 10px;
+}
+
+.justifyStart {
+	justify-content: flex-start;
+}
+
+.justifyEnd {
+	justify-content: flex-end;
+}
+
+.colorWhite {
+	color: white;
+}
+
+.colorDark {
+	color: #353535;
+}
+
+.backgroundBlue {
+	background: #2979ff;
+}
+
+.backgroundLight {
+	background: #f3f3f3;
+}
+.time {
+	color: black;
+	font-size: 10px;
+	margin-top: -10px;
+	margin-bottom: -10px;
+}
+.time1 {
+	color: black;
+	font-size: 10px;
+	margin-top: -10px;
+	margin-bottom: -10px;
+}

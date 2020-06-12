@@ -1,0 +1,22 @@
+.textContainer {
+	color: white;
+	width: 35%;
+}
+
+.activeContainer {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 100%;
+}
+
+.activeItem {
+	align-items: center;
+	margin-top: 10px;
+	margin-right: 20px;
+}
+
+@media (min-width: 320px) and (max-width: 1200px) {
+	.textContainer {
+		display: none;
+	}
+}

@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap");
+
+html,
+body {
+	font-family: "Montserrat", sans-serif;
+	padding: 0;
+	margin: 0;
+}
+
+.joinOuterContainer {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	align-items: center;
+	margin-top: 50px;
+}
+
+.joinInnerContainer {
+	width: 22%;
+	background: linear-gradient(
+		313deg,
+		rgb(170, 59, 245) 0%,
+		rgb(41, 252, 234) 100%
+	);
+	padding: 30px;
+	border-radius: 26px 26px 26px 0px;
+}
+
+.heading {
+	color: white;
+	font-size: 2.5em;
+	padding-bottom: 10px;
+	border-bottom: 2px solid white;
+}
+
+.app-name {
+	font-size: 4em;
+	margin-left: 10px;
+	font-weight: 800;
+}
+
+.button {
+	transition: all 1s ease-in-out;
+	padding: 10px 0px !important;
+	font-size: 1em !important;
+}
+
+.button:hover {
+	transform: scale(1.02, 1.02);
+}
+
+.logo {
+	width: 5%;
+	margin: 0;
+	padding: 0;
+}
+
+.sub-info {
+	font-size: 2rem;
+	font-family: "Montserrat", sans-serif;
+}
+
+.logocontainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.mt-20 {
+	margin-top: 20px;
+}
+
+.label {
+	font-weight: 500;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+	.joinOuterContainer {
+		height: 100vh;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.logo {
+		width: 60%;
+		margin-bottom: -30px;
+	}
+	.logocontainer {
+		justify-content: center;
+		flex-direction: column;
+		margin-bottom: -40px;
+	}
+	.joinInnerContainer {
+		width: 90%;
+	}
+	.djoinInnerContainer {
+		margin-right: 0px;
+	}
+	.sub-info {
+		margin-left: 0px;
+		padding: 0;
+		font-size: 18px;
+	}
+}
+
+button:focus {
+	outline: 0;
+}
