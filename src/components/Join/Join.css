@@ -43,6 +43,9 @@ body {
 	margin-left: 10px;
 	font-weight: 800;
 }
+.form-control {
+	font-size: 13px !important;
+}
 
 .button {
 	transition: all 0.3s ease-in-out;

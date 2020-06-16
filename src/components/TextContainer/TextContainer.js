@@ -1,6 +1,7 @@
 import React from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Badge from "@material-ui/core/Badge";
+import CircularProgress from "@material-ui/core/CircularProgress";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
 import "./TextContainer.css";
@@ -45,16 +46,17 @@ const TextContainer = ({ users }) => (
 						></Badge>
 					</OverlayTrigger>
 				</div>
-				<ul class="list-group list-group-flush">
+				<ul className="list-group list-group-flush">
 					{users.map(({ name }) => (
 						<li
-							class="list-group-item"
+							className="list-group-item"
 							style={{
 								color: "black",
 								fontSize: "15px",
 								display: "flex",
 								alignItems: "center",
 							}}
+							key={name}
 						>
 							<Avatar>{name.slice(0, 1).toUpperCase()}</Avatar>&nbsp;&nbsp;
 							{name.slice(0, 1).toUpperCase() + name.slice(1, name.length)}
@@ -62,7 +64,19 @@ const TextContainer = ({ users }) => (
 					))}
 				</ul>
 			</div>
-		) : null}
+		) : (
+			<div
+				className="card"
+				style={{
+					minHeight: "95vh",
+					display: "flex",
+					alignItems: "center",
+					justifyContent: "center",
+				}}
+			>
+				<CircularProgress />
+			</div>
+		)}
 	</div>
 );
 

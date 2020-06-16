@@ -28,6 +28,8 @@
 	float: left;
 	font-size: 1.2em;
 	word-wrap: break-word;
+	margin-bottom: 12px;
+	margin-top: -3px;
 }
 
 .messageText img {
@@ -39,6 +41,7 @@
 	justify-content: flex-end;
 	padding: 0 2%;
 	margin-top: 3px;
+	margin-bottom: 15px;
 }
 
 .sentText {

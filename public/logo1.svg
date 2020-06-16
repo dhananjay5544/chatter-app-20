@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="181" height="181" viewBox="0 0 181 181">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.86" y1="0.159" x2="0.126" y2="0.836" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#b83df6"/>
+      <stop offset="1" stop-color="#5029f0"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.851" y1="0.199" x2="0.162" y2="0.764" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fe1414"/>
+      <stop offset="1" stop-color="#f058fa"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_22" data-name="Group 22" transform="translate(-97 -259)">
+    <g id="Group_3" data-name="Group 3" transform="translate(97 259)">
+      <g id="Group_21" data-name="Group 21">
+        <circle id="Ellipse_155" data-name="Ellipse 155" cx="90.5" cy="90.5" r="90.5" fill="url(#linear-gradient)"/>
+        <circle id="Ellipse_156" data-name="Ellipse 156" cx="69.5" cy="69.5" r="69.5" transform="translate(36 6)" fill="url(#linear-gradient-2)"/>
+        <circle id="Ellipse_154" data-name="Ellipse 154" cx="50" cy="50" r="50" transform="translate(39 39)" fill="#fff"/>
+      </g>
+    </g>
+    <path id="Icon_awesome-phone-alt" data-name="Icon awesome-phone-alt" d="M43.1,31.35l-9.7-4.159a2.08,2.08,0,0,0-2.426.6l-4.3,5.251A32.118,32.118,0,0,1,11.317,17.686l5.251-4.3a2.074,2.074,0,0,0,.6-2.426l-4.159-9.7a2.093,2.093,0,0,0-2.383-1.2L1.612,2.132A2.08,2.08,0,0,0,0,4.159,40.2,40.2,0,0,0,40.206,44.365a2.08,2.08,0,0,0,2.028-1.612l2.08-9.012A2.1,2.1,0,0,0,43.1,31.35Z" transform="translate(165 327)"/>
+  </g>
+</svg>

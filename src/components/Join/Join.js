@@ -14,7 +14,7 @@ export default function SignIn() {
 	useEffect(() => {
 		setTimeout(() => {
 			setPageLoad(false);
-		}, 5000);
+		}, 1000);
 	}, []);
 
 	return pageload ? (
@@ -39,7 +39,7 @@ export default function SignIn() {
 			<div className="joinOuterContainer">
 				<img src={logo2} alt="sdsd" className="banner-img" />
 				<div className="joinInnerContainer">
-					<h1 className="heading">Join</h1>
+					<h1 className="heading">Join here</h1>
 					<div>
 						<label className="label">Username</label>
 						<input
@@ -72,11 +72,15 @@ export default function SignIn() {
 				</div>
 			</div>
 			<div
-				className="text-center pt-5"
-				style={{ fontFamily: "'Montserrat', sans-serif" }}
+				className="text-center pt-3 pb-1 mt-4"
+				style={{
+					fontFamily: "'Montserrat', sans-serif",
+					backgroundColor: "aliceblue",
+				}}
 			>
 				<h4>Fork me on github</h4>
 				<h6>All rights are reserved</h6>
+				<p>Made by developers at 5TechG with ❤️</p>
 			</div>
 		</div>
 	);

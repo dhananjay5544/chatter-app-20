@@ -3,6 +3,7 @@ import React from "react";
 import "./Message.css";
 
 import ReactEmoji from "react-emoji";
+import { Alert } from "react-bootstrap";
 
 const Message = ({ message: { text, user }, name }) => {
 	let isSentByCurrentUser = false;
@@ -30,6 +31,12 @@ const Message = ({ message: { text, user }, name }) => {
 					<p style={{ float: "right" }}>{getDateTime()}</p>
 				</div>
 			</div>
+		</div>
+	) : user === "admin" || user === "Admin" ? (
+		<div className="text-center w-50 mx-auto">
+			<Alert variant={user === "admin" ? "primary" : "danger"} className="p-n2">
+				{ReactEmoji.emojify(text)}
+			</Alert>
 		</div>
 	) : (
 		<div className="messageContainer justifyStart">
