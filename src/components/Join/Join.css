@@ -45,7 +45,7 @@ body {
 }
 
 .button {
-	transition: all 1s ease-in-out;
+	transition: all 0.3s ease-in-out;
 	padding: 10px 0px !important;
 	font-size: 1em !important;
 }
@@ -125,11 +125,11 @@ body {
 	.logocontainer {
 		justify-content: center;
 		flex-direction: column;
-		margin-top: 0;
+		margin-top: -20px;
 	}
 	.joinInnerContainer {
-		width: 90%;
-		padding: 22px;
+		width: 80%;
+		padding: 25px 22px 35px 22px;
 	}
 	.djoinInnerContainer {
 		margin-right: 0px;

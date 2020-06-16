@@ -1,7 +1,7 @@
 import React from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Badge from "@material-ui/core/Badge";
-import { OverlayTrigger, Tooltip, Popover } from "react-bootstrap";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
 import "./TextContainer.css";
 import "bootstrap/dist/css/bootstrap.min.css";
