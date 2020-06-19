@@ -80,7 +80,7 @@ export default function SignIn() {
 			>
 				<h4>Fork me on github</h4>
 				<h6>All rights are reserved</h6>
-				<p>Made by developers at 5TechG with ❤️</p>
+				<p>Made by developers at 5TechG</p>
 			</div>
 		</div>
 	);

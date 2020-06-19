@@ -1,6 +1,7 @@
 .textContainer {
 	color: white;
 	width: 35%;
+	max-height: 95vh;
 }
 
 .activeContainer {
@@ -8,7 +9,10 @@
 	flex-wrap: wrap;
 	margin-bottom: 100%;
 }
-
+.members {
+	overflow: auto !important;
+	max-height: 85vh;
+}
 .activeItem {
 	align-items: center;
 	margin-top: 10px;
@@ -18,7 +22,10 @@
 	background: aliceblue;
 	border-radius: 5px;
 }
-
+.user:hover {
+	background: #2979ff !important;
+	color: #fff !important;
+}
 @media (min-width: 320px) and (max-width: 1200px) {
 	.textContainer {
 		display: none;
