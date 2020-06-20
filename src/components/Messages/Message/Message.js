@@ -25,20 +25,10 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-const Message = ({ message: { text, user }, name }) => {
+const Message = ({ message: { text, user, time }, name }) => {
 	const classes = useStyles();
 	let isSentByCurrentUser = false;
 	const trimmedName = name.trim().toLowerCase();
-	const getDateTime = () => {
-		const date = new Date();
-		const time = date.toLocaleString("en-US", {
-			hour: "numeric",
-			minute: "numeric",
-			hour12: true,
-		});
-		return time;
-	};
-
 	if (user === trimmedName) {
 		isSentByCurrentUser = true;
 	}
@@ -72,7 +62,7 @@ const Message = ({ message: { text, user }, name }) => {
 			<div className="messageBox2 backgroundBlue">
 				<p className="messageText colorDark">{ReactEmoji.emojify(text)}</p>
 				<div className="time1">
-					<p style={{ float: "right" }}>{getDateTime()}</p>
+					<p style={{ float: "right" }}>{time}</p>
 				</div>
 			</div>
 		</div>
@@ -90,7 +80,7 @@ const Message = ({ message: { text, user }, name }) => {
 			<div className="messageBox1 backgroundLight">
 				<p className="messageText colorDark">{ReactEmoji.emojify(text)}</p>
 				<div className="time">
-					<p style={{ float: "right" }}>{getDateTime()}</p>
+					<p style={{ float: "right" }}>{time}</p>
 				</div>
 			</div>
 			<p className="sentText pl-10 mt-3">

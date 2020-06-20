@@ -32,3 +32,10 @@ select:focus {
 	background: #60c4fd;
 	color: black;
 }
+
+@media (min-width: 320px) and (max-width: 480px) {
+	.input {
+		font-size: 1em;
+		max-height: 5vh;
+	}
+}
