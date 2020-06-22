@@ -1,11 +1,13 @@
 .form {
 	display: flex;
-	border-top: 2px solid #d3d3d3;
+	border-top: 1px solid #ffffff;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .input {
-	border: none;
-	border-radius: 0;
+	border: 1px solid black;
+	border-radius: 100px;
 	padding: 2%;
 	width: 80%;
 	font-size: 1.2em;
@@ -19,13 +21,28 @@ select:focus {
 }
 
 .sendButton {
-	color: #fff !important;
-	text-transform: uppercase;
-	text-decoration: none;
-	background: #2979ff;
-	display: inline-block;
-	border: none;
-	width: 20%;
+	border-radius: 100px;
+	width: 14%;
+	height: 8vh;
+}
+.emoji-div {
+	margin: 0;
+	padding: 0;
+	animation: entrance 0.2s linear;
+}
+.emoji:hover {
+	transform: scale(1.1, 1.1);
+	transition: all 0.1s ease-in-out;
+}
+@keyframes entrance {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0px);
+	}
 }
 
 .sendButton:hover {
