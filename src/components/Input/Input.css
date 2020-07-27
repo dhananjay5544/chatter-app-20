@@ -6,12 +6,7 @@
 }
 
 .input {
-	border: 1px solid black;
-	border-radius: 100px;
-	padding: 2%;
-	width: 80%;
-	font-size: 1.2em;
-	max-height: 9vh;
+	flex: 1;
 }
 
 input:focus,
@@ -28,7 +23,7 @@ select:focus {
 .emoji-div {
 	margin: 0;
 	padding: 0;
-	animation: entrance 0.2s linear;
+	animation: entrance 0.3s linear;
 }
 .emoji:hover {
 	transform: scale(1.1, 1.1);

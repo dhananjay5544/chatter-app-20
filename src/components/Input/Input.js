@@ -1,13 +1,24 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPaperPlane, faSmileWink } from "@fortawesome/free-solid-svg-icons";
+import { faSmileWink } from "@fortawesome/free-solid-svg-icons";
+import {
+	IconButton,
+	TextField,
+	List,
+	ListItemAvatar,
+	ListItemText,
+	ListItem,
+	Avatar,
+} from "@material-ui/core";
+import { SendRounded } from "@material-ui/icons";
 import { Picker } from "emoji-mart";
 import "emoji-mart/css/emoji-mart.css";
 
 import "./Input.css";
 
-function Input({ setMessage, sendMessage, message }) {
+function Input({ setMessage, sendMessage, message, users }) {
 	const [emojiPickerState, SetEmojiPicker] = useState(false);
+	const [suggestionState, SetSuggestionState] = useState(false);
 
 	let emojiPicker;
 	if (emojiPickerState) {
@@ -32,13 +43,57 @@ function Input({ setMessage, sendMessage, message }) {
 	return (
 		<div>
 			{emojiPicker}
+			{suggestionState && (
+				<List dense className="w-25 ml-2 mb-0 pb-0">
+					{users &&
+						users.map(({ name, profile, timeStamp: { time } }) => (
+							<ListItem
+								button
+								key={name}
+								className="p-2"
+								style={{ borderRadius: "5px" }}
+								onClick={(key) => {
+									setMessage(message + key);
+									SetSuggestionState(false);
+								}}
+							>
+								<ListItemAvatar>
+									<Avatar
+										style={{
+											background: profile,
+											width: "30px",
+											height: "30px",
+										}}
+									>
+										{name.slice(0, 1).toUpperCase()}
+									</Avatar>
+								</ListItemAvatar>
+								<ListItemText
+									style={{ textTransform: "capitalize" }}
+									primary={name}
+								/>
+							</ListItem>
+						))}
+				</List>
+			)}
 			<form className="form pl-3 pr-3 pb-1 pt-1">
-				<textarea
-					className="input"
+				<TextField
 					type="text"
+					className="input"
+					color="primary"
+					variant="outlined"
 					placeholder="Type a message..."
+					size="small"
 					value={message}
-					onChange={({ target: { value } }) => setMessage(value)}
+					onChange={({ target: { value } }) => {
+						setMessage(value);
+						if (value.endsWith("@")) {
+							console.log("suggestions should be triggered");
+							SetSuggestionState(true);
+						} else {
+							SetSuggestionState(false);
+						}
+					}}
 					onKeyPress={(event) =>
 						event.key === "Enter" ? sendMessage(event) : null
 					}
@@ -46,21 +101,25 @@ function Input({ setMessage, sendMessage, message }) {
 
 				<FontAwesomeIcon
 					icon={faSmileWink}
-					style={{ cursor: "pointer" }}
-					className="emoji"
-					size="2x"
+					style={
+						emojiPickerState
+							? { cursor: "pointer", color: "#a8005d" }
+							: { cursor: "pointer", color: "black" }
+					}
+					className="emoji ml-3 mr-1"
+					size="lg"
 					onClick={triggerPicker}
 				/>
-				<button
-					className="sendButton btn btn-primary"
+				<IconButton
+					color="primary"
+					size="medium"
 					onClick={(e) => {
 						sendMessage(e);
-						SetEmojiPicker(!emojiPickerState);
+						SetEmojiPicker(false);
 					}}
 				>
-					Send{" "}
-					<FontAwesomeIcon icon={faPaperPlane} style={{ color: "black" }} />
-				</button>
+					<SendRounded color="primary" />
+				</IconButton>
 			</form>
 		</div>
 	);

@@ -46,13 +46,7 @@ const StyledBadge = withStyles((theme) => ({
 function TextContainer({ users }) {
 	const [isOpen, setIsOpen] = useState(false);
 	const [userD, setUserD] = useState({});
-	const awatarColor = [
-		"rgb(255, 20, 137)",
-		"rgb(153, 9, 141)",
-		"rgb(0, 0, 0)",
-		"rgb(252, 142, 16)",
-		"rgb(33, 17, 255)",
-	];
+
 	const openModal = (name, time, date) => {
 		setIsOpen(true);
 		var timeSpan = moment(date).fromNow();
@@ -62,7 +56,7 @@ function TextContainer({ users }) {
 			timeSpan: timeSpan,
 		};
 		setUserD(user);
-		console.log();
+		console.log(users);
 	};
 	const closeModal = () => {
 		setIsOpen(false);
@@ -106,7 +100,7 @@ function TextContainer({ users }) {
 						</OverlayTrigger>
 					</div>
 					<ul className="list-group list-group-flush members">
-						{users.map(({ name, timeStamp: { time, date } }) => (
+						{users.map(({ name, profile, timeStamp: { time, date } }) => (
 							<li
 								className="list-group-item user"
 								style={{
@@ -127,10 +121,7 @@ function TextContainer({ users }) {
 								>
 									<Avatar
 										style={{
-											background:
-												awatarColor[
-													Math.floor(Math.random() * awatarColor.length)
-												],
+											background: profile,
 										}}
 									>
 										{name.slice(0, 1).toUpperCase()}

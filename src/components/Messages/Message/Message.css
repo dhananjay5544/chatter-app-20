@@ -26,10 +26,10 @@
 	width: 100%;
 	letter-spacing: 0;
 	float: left;
-	font-size: 1em;
+	font-size: 0.9em;
 	word-wrap: break-word;
-	margin-bottom: 12px;
-	margin-top: -3px;
+	margin-bottom: 0px;
+	margin-top: 0px;
 }
 
 .messageText img {
@@ -90,7 +90,17 @@
 .time1 p {
 	margin-top: 10px;
 }
+.time2 {
+	color: black;
+	font-size: 10px;
+}
 
 .time p {
 	margin-top: 10px;
+}
+
+.reaction__container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }

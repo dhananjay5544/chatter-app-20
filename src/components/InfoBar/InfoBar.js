@@ -11,6 +11,13 @@ import {
 	faUsers,
 } from "@fortawesome/free-solid-svg-icons";
 import Rating from "@material-ui/lab/Rating";
+import {
+	List,
+	ListItemAvatar,
+	ListItemText,
+	ListItem,
+	Avatar,
+} from "@material-ui/core";
 
 import "./InfoBar.css";
 
@@ -26,23 +33,50 @@ function InfoBar({ room, users }) {
 		console.log("formsubmitted");
 	};
 	const popover = (
-		<Popover id="popover-basic" className="mt-2">
-			<Popover.Title as="h3">{room}</Popover.Title>
-			<Popover.Content>
-				<p>
-					<FontAwesomeIcon icon={faCrown} /> <strong>Admin </strong>
-					{users && users[0].name}
-				</p>
-				<p>
-					<FontAwesomeIcon icon={faClock} className="mr-1" />{" "}
-					<strong>Room created at </strong>
-					{users && users[0].timeStamp.time}
-				</p>
-				<p>
-					<FontAwesomeIcon icon={faUsers} />{" "}
-					<strong>Total participants </strong>
-					{users && users.length}
-				</p>
+		<Popover id="popover-basic" className="ml-2 w-100">
+			<Popover.Title as="h3" className="roomInfo_title pt-3 pb-3 pl-4">
+				<img className="onlineIcon" src={onlineIcon} alt="online icon" />
+				{room}
+			</Popover.Title>
+			<Popover.Content className="m-0 p-0">
+				<List dense className="m-0 pb-2">
+					<ListItem button className="pr-2 pt-2 pb-2 pl-3">
+						<ListItemAvatar>
+							<Avatar style={{ color: "#fff", background: "#0044ff" }}>
+								<FontAwesomeIcon icon={faCrown} />
+							</Avatar>
+						</ListItemAvatar>
+						<ListItemText
+							style={{ textTransform: "capitalize" }}
+							primary="Admin"
+							secondary={users && users[0].name}
+						/>
+					</ListItem>
+					<ListItem button className="pr-2 pt-2 pb-2 pl-3">
+						<ListItemAvatar>
+							<Avatar style={{ color: "#fff", background: "#cf0091" }}>
+								<FontAwesomeIcon icon={faClock} />
+							</Avatar>
+						</ListItemAvatar>
+						<ListItemText
+							style={{ textTransform: "capitalize" }}
+							primary="Room created at"
+							secondary={users && users[0].timeStamp.time}
+						/>
+					</ListItem>
+					<ListItem button className="pr-2 pt-2 pb-2 pl-3">
+						<ListItemAvatar>
+							<Avatar style={{ color: "#fff", background: "#a500f1" }}>
+								<FontAwesomeIcon icon={faUsers} />
+							</Avatar>
+						</ListItemAvatar>
+						<ListItemText
+							style={{ textTransform: "capitalize" }}
+							primary="Total participants"
+							secondary={users && users.length}
+						/>
+					</ListItem>
+				</List>
 			</Popover.Content>
 		</Popover>
 	);
@@ -51,7 +85,7 @@ function InfoBar({ room, users }) {
 			<div className="leftInnerContainer">
 				<img className="onlineIcon" src={onlineIcon} alt="online icon" />
 				<div className="group-info">
-					<h4 className="mt-3 room-name">{room}</h4>
+					<h5 className="mt-3 room-name">{room}</h5>
 					<p className="mt-n2 room-info">
 						room created at {users && users[0].timeStamp.time} by{" "}
 						{users && users[0].name}
@@ -59,7 +93,7 @@ function InfoBar({ room, users }) {
 				</div>
 			</div>
 			<div className="rightInnerContainer">
-				<OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
+				<OverlayTrigger trigger="click" placement="left" overlay={popover}>
 					<FontAwesomeIcon
 						icon={faInfoCircle}
 						style={{ color: "#fff" }}

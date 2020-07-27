@@ -2,7 +2,10 @@ import React, { useEffect } from "react";
 import "./Message.css";
 import ReactEmoji from "react-emoji";
 import { Alert } from "react-bootstrap";
-import Avatar from "@material-ui/core/Avatar";
+import { Avatar, Grow, Slide, IconButton, Divider } from "@material-ui/core";
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
+import ReplayRoundedIcon from "@material-ui/icons/ReplayRounded";
 import { makeStyles } from "@material-ui/core/styles";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { deepOrange, deepPurple, cyan, pink } from "@material-ui/core/colors";
@@ -42,67 +45,76 @@ const Message = ({ message: { text, user, time }, name }) => {
 
 	return isSentByCurrentUser ? (
 		<div className="messageContainer justifyEnd">
-			<p className="sentText pr-10 mt-3">
-				<OverlayTrigger
-					placement="left"
-					overlay={
-						<Tooltip id="tooltip-left">
-							<strong>
-								{trimmedName.slice(0, 1).toUpperCase() +
-									trimmedName.slice(1, trimmedName.length)}
-							</strong>
-						</Tooltip>
-					}
-				>
-					<Avatar className={classes.orange}>
-						{trimmedName.slice(0, 1).toUpperCase()}
-					</Avatar>
-				</OverlayTrigger>
-			</p>
-			<div className="messageBox2 backgroundBlue">
-				<p className="messageText colorDark">{ReactEmoji.emojify(text)}</p>
-				<div className="time1">
-					<p style={{ float: "right" }}>{time}</p>
+			<Slide in="true" direction="right">
+				<div className="messageBox2 backgroundBlue">
+					<p className="messageText colorDark">{ReactEmoji.emojify(text)}</p>
+					<div className="time1">
+						<p style={{ float: "right" }}>{time}</p>
+					</div>
 				</div>
-			</div>
+			</Slide>
 		</div>
 	) : user === "admin" || user === "Admin" ? (
 		<div className="text-center w-50 mx-auto">
 			<Alert
 				variant={user === "admin" ? "info" : "danger"}
-				className="p-n2 mt-2"
+				style={{ fontSize: "0.9em" }}
+				className="mt-2"
 			>
 				{ReactEmoji.emojify(text)}
 			</Alert>
 		</div>
 	) : (
-		<div className="messageContainer justifyStart">
-			<div className="messageBox1 backgroundLight">
-				<p className="messageText colorDark">{ReactEmoji.emojify(text)}</p>
-				<div className="time">
-					<p style={{ float: "right" }}>{time}</p>
+		<Grow in="true">
+			<div className="messageContainer justifyStart">
+				<div className="messageBox1 backgroundLight">
+					<h6
+						style={{
+							color: "rebeccapurple",
+							textTransform: "capitalize",
+							fontWeight: "bold",
+						}}
+					>
+						{user}
+					</h6>
+					<p className="messageText colorDark mb-2">
+						{ReactEmoji.emojify(text)}
+					</p>
+					<Divider />
+					<div className="reaction__container pt-1 ml-n1">
+						<span>
+							<IconButton color="primary" className="p-2 m-0">
+								<ThumbUpAltIcon color="primary" />
+							</IconButton>
+							<IconButton color="secondary" className="p-2 m-0">
+								<FavoriteBorderIcon color="secondary" />
+							</IconButton>
+							<IconButton color="default" className="p-2 m-0">
+								<ReplayRoundedIcon color="default" />
+							</IconButton>
+						</span>
+						<span className="time2">{time}</span>
+					</div>
 				</div>
+				<p className="sentText pl-10 mt-3">
+					<OverlayTrigger
+						placement="right"
+						overlay={
+							<Tooltip id="tooltip-right">
+								<strong style={{ textTransform: "capitalize" }}>{user}</strong>
+							</Tooltip>
+						}
+					>
+						<Avatar className={classes.purple}>
+							{user.slice(0, 1).toUpperCase()}
+						</Avatar>
+					</OverlayTrigger>
+				</p>
+				<audio id="notification">
+					<source src={tone} type="audio/mpeg" />
+				</audio>
 			</div>
-			<p className="sentText pl-10 mt-3">
-				<OverlayTrigger
-					placement="right"
-					overlay={
-						<Tooltip id="tooltip-right">
-							<strong>
-								{user.slice(0, 1).toUpperCase() + user.slice(1, user.length)}
-							</strong>
-						</Tooltip>
-					}
-				>
-					<Avatar className={classes.purple}>
-						{user.slice(0, 1).toUpperCase()}
-					</Avatar>
-				</OverlayTrigger>
-			</p>
-			<audio id="notification">
-				<source src={tone} type="audio/mpeg" />
-			</audio>
-		</div>
+		</Grow>
 	);
 };
 

@@ -3,7 +3,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	background: #2979ff;
+	background: rebeccapurple;
 	border-radius: 4px 4px 0 0;
 	height: 65px;
 	width: 100%;
@@ -14,7 +14,7 @@
 .leftInnerContainer {
 	display: flex;
 	align-items: center;
-	margin-left: 4%;
+	margin-left: 3%;
 	color: white;
 }
 .group-info {
@@ -53,6 +53,11 @@
 	transform: scale(1.2, 1.2);
 	transition: 0.1s all ease-in-out;
 	cursor: pointer;
+}
+.roomInfo_title {
+	background: rgb(41, 18, 255);
+	color: white;
+	text-transform: capitalize;
 }
 @media (min-width: 320px) and (max-width: 480px) {
 	.onlineIcon {

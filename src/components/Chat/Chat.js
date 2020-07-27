@@ -13,6 +13,7 @@ let socket;
 const Chat = ({ location }) => {
 	const [name, setName] = useState("");
 	const [room, setRoom] = useState("");
+	//const [profile, setProfile] = useState("");
 	const [users, setUsers] = useState("");
 	const [message, setMessage] = useState("");
 	const [messages, setMessages] = useState([]);
@@ -26,8 +27,10 @@ const Chat = ({ location }) => {
 
 		setRoom(room);
 		setName(name);
+		const avatars = ["black", "#0044ff", "#cf0091", "#f1b900", "#a500f1"];
+		var profile = avatars[Math.floor(Math.random() * avatars.length)];
 
-		socket.emit("join", { name, room }, (error) => {
+		socket.emit("join", { name, room, profile }, (error) => {
 			if (error) {
 				alert(error);
 			}
@@ -61,6 +64,7 @@ const Chat = ({ location }) => {
 				<InfoBar room={room} users={users} />
 				<Messages messages={messages} name={name} />
 				<Input
+					users={users}
 					message={message}
 					setMessage={setMessage}
 					sendMessage={sendMessage}

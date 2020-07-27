@@ -72,7 +72,7 @@ export default function SignIn() {
 				</div>
 			</div>
 			<div
-				className="text-center pt-3 pb-1 mt-4"
+				className="text-center pt-3 pb-1 mt-5"
 				style={{
 					fontFamily: "'Montserrat', sans-serif",
 					backgroundColor: "aliceblue",
@@ -80,7 +80,6 @@ export default function SignIn() {
 			>
 				<h4>Fork me on github</h4>
 				<h6>All rights are reserved</h6>
-				<p>Made by developers at 5TechG</p>
 			</div>
 		</div>
 	);
